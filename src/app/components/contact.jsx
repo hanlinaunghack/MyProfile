@@ -21,7 +21,7 @@ class ContactComponent extends React.Component {
   render() {
     return (
       <div>
-        <SharedComponent props={this.props}></SharedComponent>
+        <SharedComponent history={this.props.history}></SharedComponent>
         <div style={linkHeader}>
           <a style={linkStyles} href="https://www.linkedin.com/in/han-linaung/">
             LinkedIn
