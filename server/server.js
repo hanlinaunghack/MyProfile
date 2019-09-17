@@ -7,28 +7,6 @@ app.use(require("cors")());
 app.use(require("body-parser").json());
 app.use(express.static(path.join(__dirname, "../dist")));
 
-app.post("/api/savefile", (req, res) => {
-  var text = JSON.stringify(req.body);
-  fs.writeFile("./server/savefiles/SaveFile", text, err => {
-    if (err) throw err;
-    res.send("success");
-  });
-});
-app.get("/api/savefile", (req, res) => {
-  try {
-    fs.readFile("./server/savefiles/SaveFile", (err, data) => {
-      if (data) {
-        res.send(data);
-      } else {
-        res.send("");
-      }
-    });
-  } catch {
-    res.send("");
-    return;
-  }
-});
-
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../dist", "index.html"));
 });

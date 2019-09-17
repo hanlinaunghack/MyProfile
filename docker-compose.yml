@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  myprofile:
+    image: hanlinaunghack/myprofile:latest
+    ports:
+      - "1000:3000"
