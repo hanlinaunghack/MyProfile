@@ -1,4 +1,5 @@
 import React from "react";
+import { downloadPdf } from "../api/downloadPdf.js";
 const title = {
   textAlign: "center"
 };
@@ -9,6 +10,7 @@ const SharedComponent = props => {
       <nav>
         <button onClick={() => props.history.push("home")}>Home</button>
         <button onClick={() => props.history.push("contact")}>Contact</button>
+        <button onClick={() => downloadPdf()}>Resume</button>
       </nav>
     </div>
   );
