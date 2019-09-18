@@ -3,7 +3,13 @@ import Card from "react-bootstrap/Card";
 
 const AboutMe = () => {
   return (
-    <Card style={{ width: "30rem" }}>
+    <Card
+      style={{
+        width: "30rem",
+        margin: "auto",
+        padding: "20px"
+      }}
+    >
       <Card.Img
         style={{ width: "200px", height: "200px", margin: "auto" }}
         variant="top"

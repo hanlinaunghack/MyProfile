@@ -4,10 +4,6 @@ import { withRouter } from "react-router";
 import SharedComponent from "./shared.jsx";
 import Table from "react-bootstrap/Table";
 
-const tableStyle = {
-  border: "1px solid black",
-  padding: "5px"
-};
 class EducationComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -17,11 +13,11 @@ class EducationComponent extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="container">
         <SharedComponent history={this.props.history}></SharedComponent>
-        <div className="container">
+        <div>
           <h3>Educations and Trainings</h3>
-          <Table striped bordered hover variant="dark">
+          <Table striped bordered hover>
             <thead>
               <tr>
                 <th colspan="4">Name</th>
