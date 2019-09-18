@@ -5,11 +5,6 @@ import SharedComponent from "./shared.jsx";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 
-const projectStyle = {
-  border: "1px solid black",
-  padding: "5px",
-  margin: "10px"
-};
 class ProjectsComponent extends React.Component {
   constructor(props) {
     super(props);
