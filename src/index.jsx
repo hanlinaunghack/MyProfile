@@ -16,7 +16,7 @@ ReactDOM.render(
     <Router>
       <Route path="/home" component={HomeComponent} />
       <Route path="/contact" component={ContactComponent} />
-      <Route path="/education" component={EducationComponent} />
+      <Route path="/experience&education" component={EducationComponent} />
       <Route path="/projects" component={ProjectsComponent} />
       <Route path="/zylo" component={MyCatComponent} />
       <Route exact path="/" render={() => <Redirect to="Home" />} />

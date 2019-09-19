@@ -16,8 +16,10 @@ const SharedComponent = props => {
             <Nav.Link onClick={() => props.history.push("/home")}>
               Home
             </Nav.Link>
-            <Nav.Link onClick={() => props.history.push("/education")}>
-              Educations
+            <Nav.Link
+              onClick={() => props.history.push("/experience&education")}
+            >
+              Experience and Educations
             </Nav.Link>
             <Nav.Link onClick={() => props.history.push("/contact")}>
               Contact

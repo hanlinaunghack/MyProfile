@@ -4,10 +4,6 @@ import { withRouter } from "react-router";
 import SharedComponent from "./shared.jsx";
 import AboutMe from "./aboutme.jsx";
 
-const introStyle = {
-  marginBottom: "20px",
-  textAlign: "center"
-};
 const descriptionStyle = {
   marginTop: "20px"
 };
@@ -33,7 +29,6 @@ class HomeComponent extends React.Component {
       <div className="container">
         <SharedComponent history={this.props.history}></SharedComponent>
         <div>
-          <div style={introStyle}>Welcome to my page!</div>
           <AboutMe></AboutMe>
           <div style={descriptionStyle}>
             This page is deployed on AWS EC2 instance using docker. The site is
@@ -44,7 +39,7 @@ class HomeComponent extends React.Component {
               This page was created on: <i>9/17/2019</i>
             </div>
             <div style={dateStyle2}>
-              Last updated on: <i>9/18/2019</i>
+              Last updated on: <i>9/19/2019</i>
             </div>
           </div>
         </div>
