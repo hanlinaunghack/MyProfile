@@ -6,5 +6,6 @@ WORKDIR /src/app
 COPY . /src/app
 
 EXPOSE 3000
+EXPOSE 5432
 
 CMD ["npm", "start"]

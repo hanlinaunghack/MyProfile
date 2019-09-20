@@ -3,5 +3,17 @@ version: "3"
 services:
   myprofile:
     build: .
+    depends_on:
+      - postgres
     ports:
       - "3000:3000"
+      - "5432:5432"
+  postgres:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: mydb

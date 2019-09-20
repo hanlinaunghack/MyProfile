@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const favicon = require("serve-favicon");
 const fs = require("fs");
+const db = require("./db/connection.js");
 app.use(require("cors")());
 app.use(require("body-parser").json());
 app.use(express.static(path.join(__dirname, "../dist")));

@@ -1,31 +1,17 @@
-var mysql = require("mysql");
-
-var connection = mysql.createConnection({
+const { Client } = require("pg");
+const client = new Client({
+  user: "user",
   host: "localhost",
-  user: "hanlinaunghack",
-  database: "myprofiledb"
+  password: "pass",
+  database: "mydb"
 });
-
-const db = connection.connect(function(err) {
-  if (err) throw err;
-  connection.query(
-    "CREATE TABLE comments (id int primary key, name varchar(255), comment text)",
-    function(err, result) {
-      if (err) throw err;
-      connection.query(
-        "INSERT INTO comments (name, comment) VALUES (?, ?, ?)",
-        ["Han", "Please leave comments down below!"],
-        function(err, result) {
-          if (err) throw err;
-          connection.query("SELECT * FROM people", function(err, results) {
-            if (err) throw err;
-            console.log(results);
-          });
-        }
-      );
-    }
-  );
-  console.log("You are now connected...");
+const connectionString =
+  process.env.DATABASE_URL || "postgres://localhost:5432/mydb";
+const db = client.connect(connectionString);
+const query = client.query(
+  "CREATE TABLE items(id INT PRIMARY KEY, name VARCHAR(40) not null, comment TEXT)"
+);
+query.on("end", () => {
+  client.end();
 });
-
 module.exports = db;
