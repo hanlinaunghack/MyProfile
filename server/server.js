@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const { db } = require("./db/connection.js");
 const favicon = require("serve-favicon");
 const fs = require("fs");
 app.use(require("cors")());
