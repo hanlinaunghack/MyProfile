@@ -2,6 +2,6 @@ version: "3"
 
 services:
   myprofile:
-    image: hanlinaunghack/myprofile:latest
+    build: .
     ports:
-      - "80:3000"
+      - "3000:3000"

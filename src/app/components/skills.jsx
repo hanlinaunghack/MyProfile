@@ -3,16 +3,16 @@ import Card from "react-bootstrap/Card";
 
 const SkillComponent = () => {
   return (
-    <Card
-      style={{
-        width: "60rem",
-        margin: "auto",
-        padding: "20px"
-      }}
-    >
-      <Card.Body>
-        <Card.Title>Skills</Card.Title>
-        <Card.Text>
+    <div>
+      <Card
+        style={{
+          width: "60rem",
+          margin: "auto",
+          padding: "20px"
+        }}
+      >
+        <Card.Body>
+          <Card.Title>Skills</Card.Title>
           <p>Languages: Javascript, C#, HTML, CSS</p>
           <p>
             Front-End: ReactJS, ReduxJS, Webpack, Babel, ES6, Angular, NGRX,
@@ -31,9 +31,9 @@ const SkillComponent = () => {
             NUnitTest
           </p>
           <p>Deployment: Docker, AWS, EC2, NGINX, Jenkins 2, Git, GitLab CI</p>
-        </Card.Text>
-      </Card.Body>
-    </Card>
+        </Card.Body>
+      </Card>
+    </div>
   );
 };
 export default SkillComponent;
