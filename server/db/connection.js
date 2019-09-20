@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   database: "myprofiledb"
 });
 
-module.exports.db = connection.connect(function(err) {
+const db = connection.connect(function(err) {
   if (err) throw err;
   connection.query(
     "CREATE TABLE comments (id int primary key, name varchar(255), comment text)",
@@ -27,3 +27,5 @@ module.exports.db = connection.connect(function(err) {
   );
   console.log("You are now connected...");
 });
+
+module.exports = db;

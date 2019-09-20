@@ -29,37 +29,35 @@ class EducationComponent extends React.Component {
             <h3>Educations and Trainings</h3>
             <Card>
               <Card.Body>
-                <Card.Text>
-                  <Table striped bordered hover>
-                    <thead>
-                      <tr>
-                        <th colSpan="4">Name</th>
-                        <th colSpan="3">Field of Study</th>
-                        <th>Degree</th>
-                        <th>From</th>
-                        <th>To</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td colSpan="4">
-                          University of California Santa Barbara
-                        </td>
-                        <td colSpan="3">Biology</td>
-                        <td>BS</td>
-                        <td>2005</td>
-                        <td>2010</td>
-                      </tr>
-                      <tr>
-                        <td colSpan="4">Hack Reactor</td>
-                        <td colSpan="3">Coding</td>
-                        <td></td>
-                        <td>2018</td>
-                        <td>2019</td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                </Card.Text>
+                <Table striped bordered hover>
+                  <thead>
+                    <tr>
+                      <th colSpan="4">Name</th>
+                      <th colSpan="3">Field of Study</th>
+                      <th>Degree</th>
+                      <th>From</th>
+                      <th>To</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colSpan="4">
+                        University of California Santa Barbara
+                      </td>
+                      <td colSpan="3">Biology</td>
+                      <td>BS</td>
+                      <td>2005</td>
+                      <td>2010</td>
+                    </tr>
+                    <tr>
+                      <td colSpan="4">Hack Reactor</td>
+                      <td colSpan="3">Coding</td>
+                      <td></td>
+                      <td>2018</td>
+                      <td>2019</td>
+                    </tr>
+                  </tbody>
+                </Table>
               </Card.Body>
             </Card>
           </Jumbotron>
