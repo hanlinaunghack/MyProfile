@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import SharedComponent from "./shared.jsx";
 import AboutMe from "./aboutme.jsx";
+import SkillComponent from "./skills.jsx";
 
 const descriptionStyle = {
   marginTop: "20px"
@@ -26,20 +27,21 @@ class HomeComponent extends React.Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="container box">
         <SharedComponent history={this.props.history}></SharedComponent>
         <div>
           <AboutMe></AboutMe>
+          <SkillComponent></SkillComponent>
           <div style={descriptionStyle}>
             This page is deployed on AWS EC2 instance using docker. The site is
             still under construction. More contents to be added in the future.
           </div>
-          <div style={{ marginTop: "50px" }}>
+          <div style={{ marginTop: "50px", paddingBottom: "20px" }}>
             <div style={dateStyle1}>
               This page was created on: <i>9/17/2019</i>
             </div>
             <div style={dateStyle2}>
-              Last updated on: <i>9/19/2019</i>
+              Last updated on: <i>9/20/2019</i>
             </div>
           </div>
         </div>

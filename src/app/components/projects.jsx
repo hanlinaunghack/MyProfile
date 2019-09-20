@@ -22,7 +22,7 @@ class ProjectsComponent extends React.Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="container box">
         <SharedComponent history={this.props.history}></SharedComponent>
 
         <Jumbotron style={jumbotronStyle}>

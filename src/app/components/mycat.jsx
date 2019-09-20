@@ -5,12 +5,12 @@ import SharedComponent from "./shared.jsx";
 import Carousel from "react-bootstrap/Carousel";
 
 const imgStyle = {
-  marginLeft: "35%",
+  marginLeft: "25%",
   width: "550px",
   height: "400px"
 };
 const imgStyle2 = {
-  marginLeft: "35%",
+  marginLeft: "30%",
   width: "400px",
   height: "550px"
 };
@@ -23,7 +23,7 @@ class MyCatComponent extends React.Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="container catbox">
         <SharedComponent history={this.props.history}></SharedComponent>
         <div>
           <Carousel interval="2000">
@@ -41,6 +41,21 @@ class MyCatComponent extends React.Component {
             </Carousel.Item>
             <Carousel.Item>
               <img style={imgStyle2} src="https://i.imgur.com/vWdnvTk.jpg" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img style={imgStyle2} src="https://i.imgur.com/KMqJ2zJ.png" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img style={imgStyle2} src="https://i.imgur.com/qhPtOW9.png" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img style={imgStyle} src="https://i.imgur.com/ZFif6Wu.jpg" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img style={imgStyle2} src="https://i.imgur.com/6Jr5J0g.jpg" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img style={imgStyle2} src="https://i.imgur.com/j79yo8a.jpg" />
             </Carousel.Item>
           </Carousel>
         </div>

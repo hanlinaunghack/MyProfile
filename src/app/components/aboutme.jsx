@@ -5,9 +5,11 @@ const AboutMe = () => {
   return (
     <Card
       style={{
-        width: "30rem",
+        width: "60rem",
         margin: "auto",
-        padding: "20px"
+        padding: "20px",
+        marginBottom: "10px",
+        marginTop: "10px"
       }}
     >
       <Card.Img
