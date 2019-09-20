@@ -2,16 +2,29 @@ const { Client } = require("pg");
 const client = new Client({
   user: "user",
   host: "localhost",
+  database: "mydb",
   password: "pass",
-  database: "mydb"
+  port: 5432
 });
-const connectionString =
-  process.env.DATABASE_URL || "postgres://localhost:5432/mydb";
-const db = client.connect(connectionString);
-const query = client.query(
-  "CREATE TABLE items(id INT PRIMARY KEY, name VARCHAR(40) not null, comment TEXT)"
-);
-query.on("end", () => {
-  client.end();
-});
-module.exports = db;
+client.connect();
+// client.on("connect", () => {
+//   console.log("connected to the db");
+// });
+
+// const createTables = () => {
+//   const queryText = `CREATE TABLE IF NOT EXISTS comments(index INT PRIMARY KEY, name VARCHAR(80) NOT NULL, comment TEXT)`;
+//   client
+//     .query(queryText)
+//     .then(res => console.log(res))
+//     .catch(err => console.log(err));
+// };
+
+// const dropTables = () => {
+//   const queryText = `DROP TABLE IF EXISTS comments`;
+//   client
+//     .query(queryText)
+//     .then(res => console.log(res))
+//     .catch(err => console.log(err));
+// };
+
+module.exports = client;
