@@ -57,6 +57,18 @@ class MyCatComponent extends React.Component {
             <Carousel.Item>
               <img style={imgStyle2} src="https://i.imgur.com/j79yo8a.jpg" />
             </Carousel.Item>
+            <Carousel.Item>
+              <img style={imgStyle2} src="https://i.imgur.com/fna5ODr.jpg" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img style={imgStyle2} src="https://i.imgur.com/t76wKbl.jpg" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img style={imgStyle2} src="https://i.imgur.com/Ap2jp1t.jpg" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img style={imgStyle2} src="https://i.imgur.com/CIthppk.jpg" />
+            </Carousel.Item>
           </Carousel>
         </div>
       </div>

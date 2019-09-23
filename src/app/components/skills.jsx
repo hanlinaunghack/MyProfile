@@ -6,7 +6,7 @@ const SkillComponent = () => {
     <div>
       <Card
         style={{
-          width: "60rem",
+          width: "90%",
           margin: "auto",
           padding: "20px"
         }}

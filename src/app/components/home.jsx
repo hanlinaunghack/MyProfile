@@ -41,7 +41,7 @@ class HomeComponent extends React.Component {
               This page was created on: <i>9/17/2019</i>
             </div>
             <div style={dateStyle2}>
-              Last updated on: <i>9/20/2019</i>
+              Last updated on: <i>9/23/2019</i>
             </div>
           </div>
         </div>
