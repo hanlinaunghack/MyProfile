@@ -3,15 +3,5 @@ version: "3"
 services:
   myprofile:
     build: .
-    depends_on:
-      - postgres
     ports:
       - "3000:3000"
-  postgres:
-    image: hanlinaunghack/myprofiledatabase:latest
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-      POSTGRES_DB: mydb
