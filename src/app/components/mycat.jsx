@@ -5,14 +5,17 @@ import SharedComponent from "./shared.jsx";
 import Carousel from "react-bootstrap/Carousel";
 
 const imgStyle = {
-  marginLeft: "25%",
   width: "550px",
   height: "400px"
 };
 const imgStyle2 = {
-  marginLeft: "30%",
   width: "400px",
   height: "550px"
+};
+const titleStyle = {
+  marginTop: "55px",
+  display: "block",
+  textAlign: "center"
 };
 class MyCatComponent extends React.Component {
   constructor(props) {
@@ -23,9 +26,9 @@ class MyCatComponent extends React.Component {
   }
   render() {
     return (
-      <div className="container catbox">
+      <div className="catbox">
         <SharedComponent history={this.props.history}></SharedComponent>
-        <div>
+        <div style={titleStyle}>
           <Carousel interval="2000">
             <Carousel.Item>
               <img style={imgStyle} src="https://i.imgur.com/RpOLAC1.jpg" />

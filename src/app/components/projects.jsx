@@ -10,8 +10,8 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 const listStyle = {
   padding: "30px"
 };
-const jumbotronStyle = {
-  marginTop: "20px"
+const titleStyle = {
+  marginTop: "30px"
 };
 class ProjectsComponent extends React.Component {
   constructor(props) {
@@ -22,10 +22,10 @@ class ProjectsComponent extends React.Component {
   }
   render() {
     return (
-      <div className="container box">
+      <div className="catbox">
         <SharedComponent history={this.props.history}></SharedComponent>
 
-        <Jumbotron style={jumbotronStyle}>
+        <Jumbotron style={titleStyle}>
           <h3>Past Projects</h3>
           <Card>
             <Card.Body>

@@ -19,7 +19,7 @@ class EducationComponent extends React.Component {
   }
   render() {
     return (
-      <div className="container box">
+      <div className="catbox">
         <SharedComponent history={this.props.history}></SharedComponent>
         <div>
           <Jumbotron style={titleStyle}>

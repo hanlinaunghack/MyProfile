@@ -4,9 +4,13 @@ import { withRouter } from "react-router";
 import SharedComponent from "./shared.jsx";
 import AboutMe from "./aboutme.jsx";
 import SkillComponent from "./skills.jsx";
+import Jumbotron from "react-bootstrap/Jumbotron";
 
 const descriptionStyle = {
   marginTop: "20px"
+};
+const titleStyle = {
+  marginTop: "30px"
 };
 const dateStyle1 = {
   fontSize: "15px",
@@ -27,9 +31,9 @@ class HomeComponent extends React.Component {
   }
   render() {
     return (
-      <div className="container box">
+      <div className="catbox">
         <SharedComponent history={this.props.history}></SharedComponent>
-        <div>
+        <Jumbotron style={titleStyle}>
           <AboutMe></AboutMe>
           <SkillComponent></SkillComponent>
           <div style={descriptionStyle}>
@@ -44,7 +48,8 @@ class HomeComponent extends React.Component {
               Last updated on: <i>9/23/2019</i>
             </div>
           </div>
-        </div>
+        </Jumbotron>
+        >
       </div>
     );
   }

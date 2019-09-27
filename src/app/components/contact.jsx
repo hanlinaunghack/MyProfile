@@ -9,11 +9,6 @@ const linkStyles = {
   paddingRight: "10px",
   textAlign: "center"
 };
-const linkHeader = {
-  display: "block",
-  textAlign: "center",
-  paddingTop: "10px"
-};
 const icon = {
   height: "25px",
   width: "25px",
@@ -36,11 +31,11 @@ class ContactComponent extends React.Component {
   }
   render() {
     return (
-      <div className="container box">
+      <div className="catbox">
         <SharedComponent history={this.props.history}></SharedComponent>
         <Jumbotron style={jumboStyle}>
+          <h3>Contact</h3>
           <Card>
-            <Card.Title style={linkHeader}>Contacts</Card.Title>
             <Card.Body>
               <div>
                 <img

@@ -5,10 +5,14 @@ import SharedComponent from "./shared.jsx";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import CommentComponent from "./comment.jsx";
+import Jumbotron from "react-bootstrap/Jumbotron";
 import { getComments, postComment, deleteComment } from "../api/comments.js";
 import findLastIndex from "./helpers/findlastindex.jsx";
 const textAreaStyle = {
   resize: "none"
+};
+const titleStyle = {
+  marginTop: "30px"
 };
 class CommentsComponent extends React.Component {
   constructor(props) {
@@ -79,50 +83,54 @@ class CommentsComponent extends React.Component {
   }
   render() {
     return (
-      <div className="container box">
+      <div className="catbox">
         <SharedComponent history={this.props.history}></SharedComponent>
-        <h3>Please leave your comments below!</h3>
         {this.state.errorMessages.map((e, i) => (
           <Alert key={i} variant="danger">
             {e}
           </Alert>
         ))}
-        {this.state.comments.map((e, i) => (
-          <CommentComponent
-            user={e}
-            deleteHandler={this.deleteHandler}
-            key={i}
-            disabled={this.state.disabled}
-          ></CommentComponent>
-        ))}
-        <Form>
-          <Form.Group>
+        <Jumbotron style={titleStyle}>
+          <h3>Please leave your comments below!</h3>
+          <Form>
+            <Form.Group>
+              <Form.Control
+                type="text"
+                name="username"
+                maxLength="10"
+                placeholder="Name"
+                id="formName"
+                onChange={e => this.nameChangeHandler(e)}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group>
+              <Form.Control
+                as="textarea"
+                maxLength="60"
+                rows="3"
+                style={textAreaStyle}
+                onChange={e => this.commentChangeHandler(e)}
+                id="formComment"
+              ></Form.Control>
+            </Form.Group>
             <Form.Control
-              type="text"
-              name="username"
-              maxLength="10"
-              placeholder="Name"
-              id="formName"
-              onChange={e => this.nameChangeHandler(e)}
+              disabled={this.state.disabled}
+              type="submit"
+              value="Submit"
+              onClick={this.submitHandler}
             ></Form.Control>
-          </Form.Group>
-          <Form.Group>
-            <Form.Control
-              as="textarea"
-              maxLength="60"
-              rows="3"
-              style={textAreaStyle}
-              onChange={e => this.commentChangeHandler(e)}
-              id="formComment"
-            ></Form.Control>
-          </Form.Group>
-          <Form.Control
-            disabled={this.state.disabled}
-            type="submit"
-            value="Submit"
-            onClick={this.submitHandler}
-          ></Form.Control>
-        </Form>
+          </Form>
+        </Jumbotron>
+        <Jumbotron>
+          {this.state.comments.map((e, i) => (
+            <CommentComponent
+              user={e}
+              deleteHandler={this.deleteHandler}
+              key={i}
+              disabled={this.state.disabled}
+            ></CommentComponent>
+          ))}
+        </Jumbotron>
       </div>
     );
   }
