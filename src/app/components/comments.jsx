@@ -47,12 +47,14 @@ class CommentsComponent extends React.Component {
   }
   async submitHandler(e) {
     e.preventDefault();
-    if (this.state.comments.length >= 2) return;
-    this.setState({ ...this.state, disabled: true });
-    let result = { ...this.state };
     let error = [];
+    if (this.state.comments.length > 5) {
+      error.push("Max comment number reached! I will get back to you!");
+    }
+    let result = { ...this.state };
     if (!result.name) error.push("You must fill out your name!");
     if (!result.comment) error.push("You have not commented yet!");
+    this.setState({ ...this.state, disabled: true });
     if (error.length) {
       this.setState({ ...this.state, errorMessages: error, disabled: false });
       return;
