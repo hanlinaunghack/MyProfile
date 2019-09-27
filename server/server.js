@@ -1,34 +1,26 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const bodyParser = require("body-parser");
 const client = require("./db/connection.js");
+const { transporter, mailOptions } = require("./nodemailer/nodemailer.js");
+
 app.use(require("cors")());
-app.use(require("body-parser").json());
+app.use(bodyParser.json());
+app.use("/tests", require("./routes/testRoutes"));
+app.use("/api/comments", require("./routes/commentRoutes"));
 app.use(express.static(path.join(__dirname, "../dist")));
 
-app.get("/test", async (req, res) => {
-  const queryString = `CREATE TABLE IF NOT EXISTS comments (index INT PRIMARY KEY, name VARCHAR(30), comment TEXT, date VARCHAR(30));`;
-  await client.query(queryString, (err, res) => {
-    if (err) console.log(err);
-  });
-  const queryText = `SELECT * FROM comments`;
-  await client.query(queryText, (err, result) => {
-    if (err) {
-      console.log(err);
-      res.send("fail");
-    } else {
-      console.log(result.rows);
-      res.json(result.rows);
+app.get("/contactme/email", (req, res, next) => {
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      console.error(error);
     }
   });
-});
-app.get("/testinsert", (req, res) => {
-  const [ind, name, comment] = [2, "Han", "blablabla"];
-  const queryText = `INSERT INTO comments(index, name, comment) VALUES($1, $2, $3)`;
-  client.query(queryText, [ind, name, comment]);
+  res.send("Success");
 });
 app.get("/download/resume", (req, res) => {
-  const file = path.resolve(__dirname, "./downloads/ResumeV3.pdf");
+  const file = path.resolve(__dirname, "./downloads/ResumeV4.pdf");
   res.download(file); // Set disposition and send it.
 });
 app.get("*", (req, res) => {

@@ -8,4 +8,12 @@ const client = new Client({
 });
 client.connect();
 
+const queryString = `CREATE TABLE IF NOT EXISTS comments (index INT PRIMARY KEY, name VARCHAR(20), comment TEXT, email VARCHAR(30), date VARCHAR(20));`;
+client.query(queryString, (err, response) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+});
+
 module.exports = client;

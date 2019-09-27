@@ -67,7 +67,7 @@ class MyCatComponent extends React.Component {
               <img style={imgStyle2} src="https://i.imgur.com/Ap2jp1t.jpg" />
             </Carousel.Item>
             <Carousel.Item>
-              <img style={imgStyle2} src="https://i.imgur.com/CIthppk.jpg" />
+              <img style={imgStyle} src="https://i.imgur.com/CIthppk.jpg" />
             </Carousel.Item>
           </Carousel>
         </div>
