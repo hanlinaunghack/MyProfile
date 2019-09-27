@@ -4,8 +4,9 @@ import { withRouter } from "react-router";
 import SharedComponent from "./shared.jsx";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
-import DeleteButton from "./delete-button.jsx";
+import CommentComponent from "./comment.jsx";
 import { getComments, postComment, deleteComment } from "../api/comments.js";
+import findLastIndex from "./helpers/findlastindex.jsx";
 const textAreaStyle = {
   resize: "none"
 };
@@ -41,8 +42,9 @@ class CommentsComponent extends React.Component {
     });
   }
   async submitHandler(e) {
-    this.setState({ ...this.state, disabled: true });
     e.preventDefault();
+    if (this.state.comments.length >= 2) return;
+    this.setState({ ...this.state, disabled: true });
     let result = { ...this.state };
     let error = [];
     if (!result.name) error.push("You must fill out your name!");
@@ -51,7 +53,11 @@ class CommentsComponent extends React.Component {
       this.setState({ ...this.state, errorMessages: error, disabled: false });
       return;
     } else {
-      let com = { index: 1, name: "Han", comment: "Hi, My name is Han!" };
+      let com = {
+        index: findLastIndex(this.state.comments),
+        name: this.state.name,
+        comment: this.state.comment
+      };
       await postComment(com.index, com.name, com.comment);
       let comments = await getComments();
       document.getElementById("formName").value = "";
@@ -59,6 +65,8 @@ class CommentsComponent extends React.Component {
       this.setState({
         ...this.state,
         errorMessages: [],
+        name: "",
+        comment: "",
         comments,
         disabled: false
       });
@@ -80,12 +88,12 @@ class CommentsComponent extends React.Component {
           </Alert>
         ))}
         {this.state.comments.map((e, i) => (
-          <DeleteButton
+          <CommentComponent
+            user={e}
             deleteHandler={this.deleteHandler}
-            index={e.index}
             key={i}
             disabled={this.state.disabled}
-          ></DeleteButton>
+          ></CommentComponent>
         ))}
         <Form>
           <Form.Group>
