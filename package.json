@@ -36,7 +36,7 @@
     "serve-favicon": "^2.5.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "@babel/plugin-transform-async-to-generator": "^7.5.0",
